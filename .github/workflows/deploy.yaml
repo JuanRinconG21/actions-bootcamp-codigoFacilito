@@ -1,0 +1,14 @@
+name: "Deploy de Prueba"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-prueba:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "Pull del Codigo"
+      run: echo "Corremos Migraciones"
+      run: echo "Publicamos Version 1.0"

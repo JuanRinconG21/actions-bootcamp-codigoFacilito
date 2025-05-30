@@ -9,7 +9,7 @@ jobs:
   deploy-prueba:
     runs-on: ubuntu-latest
     steps:
-      uses: actions/checkout@v4
-      run: echo "Pull del Codigo"
-      run: echo "Corremos Migraciones"
-      run: echo "Publicamos Version 1.0"
+      - uses: actions/checkout@v4
+      - run: echo "Pull del Codigo"
+      - run: echo "Corremos Migraciones"
+      - run: echo "Publicamos Version 1.0"

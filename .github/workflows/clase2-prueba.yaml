@@ -5,11 +5,14 @@ on: push
 jobs:
   first_jobs:
     runs-on: ubuntu-latest
+    env:
+      NAME: "JOTA"
     steps:
       - name: "Hello World"
-        run: echo "Hello World"
+        run: echo "Hello World $NAME"
 
   second_jobs:
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: first_jobs
     runs-on: ubuntu-latest
     steps:

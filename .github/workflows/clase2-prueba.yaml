@@ -1,0 +1,11 @@
+name: Deploy al Server
+
+on: push
+
+jobs:
+  first_jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Hello World"
+        run: echo "Hello World"

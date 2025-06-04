@@ -68,3 +68,15 @@ jobs:
 
       - name: "Ver contenido"
         run: cat test.log
+
+  fiveth_jobs:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        message: ["Hola", "Mundo", "Jota"]
+      
+
+    steps:
+      - name: "Ver mensaje"
+        run: echo "${{ matrix.message }}"

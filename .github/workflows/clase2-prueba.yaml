@@ -5,8 +5,13 @@ on: push
 jobs:
   first_jobs:
     runs-on: ubuntu-latest
+
     env:
       NAME: "JOTA"
+
+    outputs:
+      salida1: ${{ steps.dar_mensaje.outputs.my_variable }}
+
     steps:
       - name: "Workin dir"
         run: ls -al
@@ -28,8 +33,10 @@ jobs:
         run: echo "${{ steps.dar_mensaje.outputs.my_variable }}"
   second_jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
+    env:
+      salidaAnterior: ${{ needs.first_jobs.outputs.salida1 }}
     needs: first_jobs
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World 2"
-        run: echo "Hello World 2"
+        run: echo "$salidaAnterior"

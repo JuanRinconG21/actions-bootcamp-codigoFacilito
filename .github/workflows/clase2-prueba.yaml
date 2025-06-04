@@ -40,3 +40,18 @@ jobs:
     steps:
       - name: "Hello World 2"
         run: echo "$salidaAnterior"
+
+  third_jobs:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Generar archivo"
+        run: |
+          echo "Archivo de Prueba, Jota" >> test.log
+      
+      - name: "Subir artefacto"
+        uses: actions/upload-artifact@v4
+        with: 
+          name: "artefacto-test"
+          path: test.log

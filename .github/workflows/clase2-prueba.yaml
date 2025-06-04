@@ -52,7 +52,7 @@ jobs:
       - name: "Subir artefacto"
         uses: actions/upload-artifact@v4
         with:
-          name: "artefacto-test"
+          name: artefacto-test
           path: test.log
 
   fourth_jobs:
@@ -64,7 +64,7 @@ jobs:
       - name: "Descargar artefacto"
         uses: actions/download-artifact@v4
         with:
-          name: test.log
+          name: artefacto-test
 
       - name: "Ver contenido"
         run: cat test.log

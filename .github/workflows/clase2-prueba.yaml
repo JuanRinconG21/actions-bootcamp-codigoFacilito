@@ -8,8 +8,14 @@ jobs:
     env:
       NAME: "JOTA"
     steps:
-      - name: "Hello World"
-        run: echo "Hello World $NAME"
+      - name: "Workin dir"
+        run: ls -al
+
+      - name: Action
+        uses: actions/checkout@v4
+
+      - name: "Workin dir after checkout"
+        run: ls -al
 
   second_jobs:
     if: ${{ github.ref == 'refs/heads/main' }}

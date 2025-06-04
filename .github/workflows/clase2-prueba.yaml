@@ -17,6 +17,15 @@ jobs:
       - name: "Workin dir after checkout"
         run: ls -al
 
+      - name: "Variable de Entorno"
+        run: echo $GITHUB_OUTPUT
+
+      - name: "Dar mensaje"
+        id: dar_mensaje
+        run: echo my_variable= "Hola Jota Roncon" >> $GITHUB_OUTPUT
+
+      - name: "Ver mensaje"
+        run: echo "${{ steps.dar_mensaje.outputs.my_variable }}"
   second_jobs:
     if: ${{ github.ref == 'refs/heads/main' }}
     needs: first_jobs
